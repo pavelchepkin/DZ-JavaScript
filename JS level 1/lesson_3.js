@@ -15,14 +15,40 @@
 //     xxxxx
 
 // занание 1
-let a = 100;
+console.log('занание 1');
 
+var i = 1;
+var a = 100;
 number:
-    for (let i = 2; i <= a; i++) {
-
-         for (let j = 2; j < i; j++) {
-              if (i % j == 0) continue number;
-         }
-
-         console.log(i);
+    while (i < a) {
+        i++;
+        for (var j = 2; j < i; j++) {
+            if (i % j == 0) continue number;
+        }
+        console.log(i);
     }
+
+// занание 2
+
+console.log('занание 2.a');
+
+let arr = [
+    ['куртка', 100],
+    ['юбка', 87],
+    ['платье', 239],
+    ['майка', 29]
+];
+for (i = 0; i < arr.length; i++) {
+     console.log(arr[i])
+}
+
+// занание 2
+    console.log('занание 2.a');
+function countBasketPrice() {
+     var y = 0;
+     for (i = 0; i < arr.length; i++) {
+          y = y + arr[i][1]
+     }
+     return y;
+}
+console.log('Товаров на сумму: ' + countBasketPrice());
