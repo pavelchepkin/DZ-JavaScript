@@ -38,17 +38,37 @@ let arr = [
     ['платье', 239],
     ['майка', 29]
 ];
-for (i = 0; i < arr.length; i++) {
-     console.log(arr[i])
+for (var k = 0; k < arr.length; k++) {
+    console.log(arr[k])
 }
 
 // занание 2
-    console.log('занание 2.a');
+console.log('занание 2.б');
+
 function countBasketPrice() {
-     var y = 0;
-     for (i = 0; i < arr.length; i++) {
-          y = y + arr[i][1]
-     }
-     return y;
+    var y = 0;
+    for (i = 0; i < arr.length; i++) {
+        y = y + arr[i][1]
+    }
+    return y;
 }
+
 console.log('Товаров на сумму: ' + countBasketPrice());
+
+// занание 3
+console.log('занание 3');
+
+var m = 0;
+for (; ;) {
+    if (m >= 10) break;
+    console.log(m++);
+}
+
+// занание 4
+console.log('занание 4');
+var pyramida = 'x';
+var kycha = '';
+for (var v = 0; v < 20; v++) {
+    kycha = kycha + pyramida;
+    console.log(kycha)
+}
