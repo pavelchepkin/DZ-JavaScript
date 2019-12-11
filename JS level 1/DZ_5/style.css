@@ -43,3 +43,35 @@
     height: 5px;
     background-color: #ffe571;
 }
+.basketBox{
+    margin-top: 20px;
+}
+#click{
+    height: 50px;
+    width: 600px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 33px;
+    line-height: 50px;
+    background-color: #ffb88d;
+    cursor: default;
+}
+
+.product{
+    height: 50px;
+    width: 600px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 33px;
+    line-height: 50px;
+}
+
+.totalPricePr{
+    height: 50px;
+    width: 600px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 25px;
+    line-height: 50px;
+    background-color: #e3e3e3;
+}
