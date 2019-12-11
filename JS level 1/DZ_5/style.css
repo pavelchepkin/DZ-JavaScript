@@ -38,15 +38,18 @@
     margin-left: 10px;
 }
 
-#line {
+#line,
+.lineSecond {
     margin-top: 10px;
     height: 5px;
     background-color: #ffe571;
 }
-.basketBox{
+
+.basketBox {
     margin-top: 20px;
 }
-#click{
+
+#click {
     height: 50px;
     width: 600px;
     border: 1px solid black;
@@ -57,7 +60,7 @@
     cursor: default;
 }
 
-.product{
+.product {
     height: 50px;
     width: 600px;
     border: 1px solid black;
@@ -66,7 +69,7 @@
     line-height: 50px;
 }
 
-.totalPricePr{
+.totalPricePr {
     height: 50px;
     width: 600px;
     border: 1px solid black;
@@ -74,4 +77,71 @@
     font-size: 25px;
     line-height: 50px;
     background-color: #e3e3e3;
+}
+
+.exercise3 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    width: 450px;
+}
+
+.catalogProductov {
+    height: 190px;
+    width: 200px;
+    border: 1px solid black;
+    margin: 5px;
+    text-align: center;
+    line-height: 30px;
+    color: #000000;
+    border-radius: 6px;
+    font-size: 22px;
+}
+
+.catalogProductov:nth-child(1) {
+    background-repeat: no-repeat;
+    background-image: url("img/hat.jpg");
+    background-position: bottom;
+}
+
+.catalogProductov:nth-child(2) {
+    background-repeat: no-repeat;
+    background-image: url("img/hat2.jpg");
+    background-position: bottom;
+}
+
+.catalogProductov:nth-child(3) {
+    background-repeat: no-repeat;
+    background-image: url("img/hat3.jpg");
+    background-position: bottom;
+}
+
+.catalogProductov:nth-child(4) {
+    background-repeat: no-repeat;
+    background-image: url("img/hat4.jpg");
+    background-position: bottom;
+}
+
+.catalogProductov:nth-child(5) {
+    background-repeat: no-repeat;
+    background-image: url("img/hat5.jfif");
+    background-position: bottom;
+}
+
+.catalogProductov:nth-child(6) {
+    background-repeat: no-repeat;
+    background-image: url("img/hat6.webp");
+    background-position: bottom;
+}
+
+.catalogProductov:nth-child(7) {
+    background-repeat: no-repeat;
+    background-image: url("img/hat7.jpg");
+    background-position: bottom;
+}
+
+.catalogProductov:nth-child(8) {
+    background-repeat: no-repeat;
+    background-image: url("img/hat8.webp");
+    background-position: bottom;
 }
