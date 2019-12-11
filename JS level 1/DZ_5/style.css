@@ -1,0 +1,45 @@
+#map {
+    display: flex;
+}
+
+#lok {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+
+}
+
+.dblok {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50px;
+    height: 50px;
+    outline: 1px solid darkred;
+    background-color: #000000;
+}
+
+.wblok {
+    width: 50px;
+    height: 50px;
+    outline: 1px solid darkred;
+}
+
+.rowLetters {
+    margin-left: 49px;
+    letter-spacing: 34px;
+    padding-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.colmLetters {
+    font-size: 1.5em;
+    line-height: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#line {
+    margin-top: 10px;
+    height: 5px;
+    background-color: #ffe571;
+}
