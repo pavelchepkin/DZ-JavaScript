@@ -1,0 +1,12 @@
+.price p{
+    width: 50px;
+    display: inline-block;
+    margin-top: 0;
+}
+.productBox{
+    margin-top: 10px;
+    width: 150px;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: rgba(215, 255, 210, 0.49);
+}
