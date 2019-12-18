@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class='new_catalog'><h2>Каталог</h2></div>
+<div class='new_cart'></div>
+<hr>
+
+<button class="accordion">Корзина</button>
+<div class="panel">
+<div class="cart-list"></div>
+<br>
+<div class="cart-listSum"></div>
+<button class="cart-btn">Очистить корзину</button>
+<br>
+</div>
+
+<button class="accordion">Адресс</button>
+<div class="panel">
+<h3>город <input type="text"></h3>
+<h3>улица <input type="text"></h3>
+<h3>дом <input type="number" min="1" ></h3>
+<br>
+</div>
+<button class="accordion">Коментарий</button>
+<div class="panel">
+<textarea id="comment" cols="30" rows="10"></textarea>
+</div>
+
+<script>
+    const Catalog = {
+        products: [
+            {
+                id_product: 48,
+                product_name: 'куртка',
+                price: 56,
+                quantity: 2,
+            }
+            ,
+            {
+                id_product: 52,
+                product_name: 'уги',
+                price: 69,
+                quantity: 2
+            }
+            ,
+            {
+                id_product: 53,
+                product_name: 'майка',
+                price: 28,
+                quantity: 4
+            }
+            ,
+            {
+                id_product: 54,
+                product_name: 'шарф',
+                price: 48,
+                quantity: 1
+            }
+            ,
+            {
+                id_product: 55,
+                product_name: 'шапка',
+                price: 93,
+                quantity: 3
+            },
+        ],
+    };
+
+    for (key in Catalog.products) {
+        document.querySelector('.new_catalog').innerHTML +=
+            `<div class="productBox">
+                <h3>${Catalog.products[key].product_name}</h3>
+                <div class='price'>
+                    <p>${Catalog.products[key].quantity} шт.</p>
+                    <p>${Catalog.products[key].price} руб.</p></div>
+                    <button id='${Catalog.products[key].id_product}' class='btnSendToCard'>Добавить</button>
+            </div>`;
+    }
+
+    let btnSendToCard = document.getElementsByClassName('btnSendToCard');
+
+    let sendToCart = (e) => {
+
+        console.log('Добавляем что-то в корзину', e.target.id);
+        for (key in Catalog.products) {
+            if (Catalog.products[key].id_product == e.target.id) {
+                cart.products.push(Catalog.products[key]);
+            }
+        }
+        cart.render();
+    };
+
+    [...btnSendToCard].map(element => {
+        element.addEventListener('click', sendToCart);
+    });
+
+    const cart = {
+        cartListBlock: null,
+        cartListSum: null,
+        cartButton: null,
+        products: [],
+
+        render() {
+            this.cartListBlock = document.querySelector('.cart-list');
+            this.cartListSum = document.querySelector('.cart-listSum');
+            this.cartButton = document.querySelector('.cart-btn');
+
+            if (this.products.length > 0) {
+                this.cartListSum.textContent = `В корзине ${this.getCartQuantity()} товаров(а) на сумму ${this.getCartPrice()} руб.`;
+                this.renderCartList();
+            } else {
+                this.cartListSum.textContent = 'Корзина пуста';
+            }
+            this.cartButton.addEventListener('click', this.dropCart.bind(this));
+        },
+
+        getCartPrice() {
+            return this.products.reduce((price, good) => {
+                return price + good.price * good.quantity;
+            }, 0);
+        },
+
+        getCartQuantity() {
+            return this.products.reduce((quantity, good) => {
+                return quantity + good.quantity;
+            }, 0);
+        },
+
+        renderCartList() {
+            this.cartListBlock.innerHTML = '';
+            this.products.forEach(item => {
+                this.cartListBlock.insertAdjacentHTML('afterbegin', this.renderCartItem(item));
+            });
+        },
+
+        renderCartItem(item) {
+            return `<div class="productBoxBasket">
+                        <h3>${item.product_name}</h3>
+                            <div class="price">
+                                <p>${item.quantity} шт.</p>
+                                <p>${item.price} руб.</p>
+                            </div>
+                        </div>`;
+        },
+
+        dropCart() {
+            this.products = [];
+            this.render();
+            this.cartListBlock.innerHTML = '';
+        },
+    };
+
+    cart.render();
+
+var acc = document.getElementsByClassName('accordion');
+for (let i = 0;i < acc.length; i++){
+    acc[i].addEventListener('click', function () {
+        this.nextElementSibling.classList.toggle('show');
+    })
+}
+</script>
+</body>
+</html>
